@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Início{% endblock %}
+
+{% block content %}
+<main>
+    <h1>Área autenticada</h1>
+    <p>Você está logado como {{ request.user.username }}.</p>
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Sair</button>
+    </form>
+</main>
+{% endblock %}
