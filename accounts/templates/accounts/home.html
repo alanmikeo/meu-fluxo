@@ -2,13 +2,13 @@
 {% block title %}Início{% endblock %}
 
 {% block content %}
-<main>
-    <h1>Área autenticada</h1>
-    <p>Você está logado como {{ request.user.username }}.</p>
+    <div class="text-white">
+        <h1>Área autenticada</h1>
+        <p>Você está logado como {{ request.user.username }}.</p>
 
-    <form method="post" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">Sair</button>
-    </form>
-</main>
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="w-full py-4 rounded-xl text-white font-semibold btn-primary flex items-center justify-center space-x-2">Sair</button>
+        </form>
+    </div>
 {% endblock %}
